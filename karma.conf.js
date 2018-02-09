@@ -80,7 +80,7 @@ module.exports = function(config) {
       'karma-mocha',
       'karma-chrome-launcher',
       'karma-coverage',
-      'webpack'
+      'karma-webpack',
     ],
     customLaunchers: {
         ChromeHeadless: {
