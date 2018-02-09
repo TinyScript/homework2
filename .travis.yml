@@ -12,5 +12,4 @@ before_script:
   - sleep 3 # give xvfb some time to start
 
 before_install:
-  - npm install webpack -g
   - npm install karma-cli -g
