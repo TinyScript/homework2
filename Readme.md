@@ -1,3 +1,5 @@
+[![Build Status](https://www.travis-ci.org/TinyScript/homework2.svg?branch=master)](https://www.travis-ci.org/TinyScript/homework2)
+[![Coverage Status](https://coveralls.io/repos/github/TinyScript/homework2/badge.svg?branch=master)](https://coveralls.io/github/TinyScript/homework2?branch=master)
 # 作业
 
 > 8.15更新，更加详尽的测试用例
