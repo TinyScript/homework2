@@ -2,7 +2,7 @@
 // Generated on Fri Aug 11 2017 22:02:05 GMT+0800 (CST)
 
 module.exports = function(config) {
-  config.set({
+  const opt = {
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
@@ -18,7 +18,6 @@ module.exports = function(config) {
       'test/**.js'
     ],
 
-
     // list of files to exclude
     exclude: [
     ],
@@ -27,7 +26,8 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'test/*': ['webpack']
+      'test/*': ['webpack'],
+      'test/*.js': 'coverage'
     },
 
 
@@ -75,6 +75,19 @@ module.exports = function(config) {
 
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity
-  })
+    concurrency: Infinity,
+    plugins: [
+      'karma-mocha',
+      'karma-chrome-launcher',
+      'karma-coverage'
+    ],
+    customLaunchers: {
+        ChromeHeadless: {
+            base: 'Chrome',
+            flags: ['--no-sandbox']
+        }
+    },
+  }
+  opt.browser = ['ChromeHeadless'];
+  config.set(opt);
 }
