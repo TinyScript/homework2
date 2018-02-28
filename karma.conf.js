@@ -26,9 +26,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'test/*': ['webpack'],
-      'test/*.js': 'coverage',
-      'lib/*.js': 'coverage'
+      'test/*': ['webpack']
     },
 
 
@@ -80,20 +78,14 @@ module.exports = function(config) {
     plugins: [
       'karma-mocha',
       'karma-chrome-launcher',
-      'karma-coverage',
       'karma-webpack',
-      'karma-coveralls'
     ],
     customLaunchers: {
         ChromeHeadless: {
             base: 'Chrome',
             flags: ['--no-sandbox']
         }
-    },
-    coverageReporter: {
-        type: "lcov",
-        dir: "coverage/"
-    },
+    }
   }
   opt.browser = ['ChromeHeadless'];
   config.set(opt);
